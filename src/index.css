@@ -1,0 +1,112 @@
+@import '~antd/dist/antd.min.css';
+@import './tailwind.build.css';
+@import url('https://d2lorw9ezbtcab.cloudfront.net/fontello/css/fontello.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap');
+
+html, body {
+  font-family: 'Inter' !important;
+}
+
+svg {
+  vertical-align: initial !important;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+table tr th,
+button,
+.ant-modal-title,
+.ant-page-header-heading-title,
+.ant-statistic-content-value
+{
+  font-family: 'Poppins' !important;
+  font-weight: 600 !important;
+}
+
+.ant-table-title {
+  padding: 0px 0px 16px !important;
+}
+
+.ant-descriptions-item {
+  padding-bottom: 8px !important;
+}
+
+.ant-descriptions-item:last-child {
+  /* padding-bottom: 0px !important; */
+}
+
+.ant-descriptions-item-label {
+  font-weight: 600;
+}
+
+.ant-descriptions-item-content {
+  font-family: 'Inter';
+}
+
+.ant-card {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 30, 77, 0.08);
+  border-radius: 8px;
+}
+
+.ant-table-footer {
+  background: white;
+  padding: 0;
+}
+
+.ant-drawer-body {
+  padding: 0px;
+}
+
+.ant-layout-content {
+  background: #F9F9FA;
+}
+
+.ant-menu {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F3F7F9 84.37%, #E9F1F4 100%);
+}
+
+.ant-menu-item,
+.ant-tabs-tab-btn,
+.ant-statistic-title
+{
+  font-family: 'Poppins';
+  font-weight: 600 !important;
+}
+
+.ant-card {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 30, 77, 0.08);
+  border-radius: 8px;
+}
+
+.ant-btn {
+  border-radius: 8px;
+}
+
+#overview .ant-statistic-content,
+#overview .ant-statistic-content-value-decimal,
+#overview .ant-statistic-content-suffix {
+  font-size: 42px;
+}
+#overview .ant-statistic-content-suffix {
+  font-weight: 600;
+}
+
+.ant-image-preview-img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10%;
+}
+
+.ant-modal-confirm-btns {
+  width: 100% !important;
+  text-align: right;
+}
+
+.ant-form-inline .ant-form-item:last-child {
+  margin-right: 0px;
+}
