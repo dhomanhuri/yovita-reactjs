@@ -54,12 +54,14 @@ const UserManagement = () => {
       render: () => (
         <Space size="middle">
           <EditOutlined className="cursor-pointer"/>
-          <DeleteOutlined className="text-red-500 cursor-pointer"/>
+          <DeleteOutlined className="text-red-500 cursor-pointer" onClick={deleteTodo}/>
         </Space>
       ),
     },
   ];
-
+  const deleteTodo = () => {
+    console.log("deletetodo"+users.title)
+  };
   return (
     <Table columns={columns} dataSource={users} pagination={{ pageSize: 10 }} loading={!users?.length}/>
   );

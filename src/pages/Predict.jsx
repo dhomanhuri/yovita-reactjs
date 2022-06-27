@@ -56,12 +56,13 @@ const Predict = () => {
       dataIndex: "readiness",
     }
   ];
+ 
 
   return (
     <>
       <Button onClick={() => setIsModalVisible(true)}>Pilih Tahun</Button>
-      <Button onClick={() => setVisible(true)} className="ml-4">Tampilkan Grafik</Button>
-      <Button onClick={() => setVisibleTable(true)} className="ml-4">Tampilkan Tabel Perhitungan</Button>
+      {/* <Button onClick={() => setVisible(true)} className="ml-4">Tampilkan Grafik</Button> */}
+      <Button onClick={() => setVisibleTable(true)} className="ml-4">Prediksi</Button>
       <ModalPredict
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}

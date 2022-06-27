@@ -2,6 +2,7 @@ import React from "react";
 import { Table, Modal } from "antd";
 
 const ModalTable = ({isModalVisible, setIsModalVisible, data}) => {
+  
   const columns = [
     {
       title: "Tahun",
@@ -15,20 +16,15 @@ const ModalTable = ({isModalVisible, setIsModalVisible, data}) => {
       key: "bulan",
     },
     {
-      title: "Total Aircraft Inventory (TAI)",
+      title: "Aktual",
       dataIndex: "tai",
       key: "tai",
     },
     {
-      title: "Unchedule Maintenance",
+      title: "Prediksi",
       key: "maintenance",
-      dataIndex: "maintenance",
+      dataIndex: "predict",
     },
-    {
-      title: "Operational Readiness",
-      key: "readiness",
-      dataIndex: "readiness",
-    }
   ];
   
   return (
