@@ -3,6 +3,13 @@ import { Table, Image, Button } from "antd";
 import ModalPredict from "../components/ModalPredict";
 import ModalTable from "../components/ModalTable";
 import axios from "axios";
+// import { Line } from 'react-chartjs-2';
+// import {Chart as ChartJS, Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement, Filler } from 'chart.js';
+
+// ChartJS.register(
+//   Title, Tooltip, LineElement, Legend,
+//   CategoryScale, LinearScale, PointElement, Filler
+// )
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Predict = () => {
@@ -12,7 +19,23 @@ const Predict = () => {
   const [visibleTable, setVisibleTable] = React.useState(false);
   const [image, setImage] = React.useState();
   const [options, setOptions] = React.useState([]);
-
+  // const [data2]= React.useState({
+  //   labels:["Jan","Feb", "March", "April", "May", "June", "July", "August", "September", "Oct", "Nov", "Dec"],
+  //   datasets:[
+  //     {
+  //       label:"First Dataset",
+  //       data:[10, 20, 30, 42, 51, 82, 31, 59, 61, 73, 91, 58],
+  //       backgroundColor:'yellow',
+  //       borderColor:'green',
+  //       tension:0.4,
+  //       fill:true,
+  //       pointStyle:'rect',
+  //       pointBorderColor:'blue',
+  //       pointBackgroundColor:'#fff',
+  //       showLine:true
+  //     }
+  //   ]
+  // })
   React.useEffect(() => {
     (async () => {
       try {
@@ -56,13 +79,15 @@ const Predict = () => {
       dataIndex: "readiness",
     }
   ];
- 
+  
 
   return (
     <>
       <Button onClick={() => setIsModalVisible(true)}>Pilih Tahun</Button>
       {/* <Button onClick={() => setVisible(true)} className="ml-4">Tampilkan Grafik</Button> */}
       <Button onClick={() => setVisibleTable(true)} className="ml-4">Prediksi</Button>
+      
+      {/* <Line data={data2}>Hello</Line> */}
       <ModalPredict
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
@@ -75,6 +100,7 @@ const Predict = () => {
         setIsModalVisible={setVisibleTable}
         data={data}
       />
+      
       <Table
         columns={columns}
         dataSource={isModalVisible ? [] : data}
