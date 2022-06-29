@@ -17,25 +17,25 @@ const ModalTable = ({isModalVisible, setIsModalVisible, data}) => {
         label:"Predict",
         data:tempPredict,
         backgroundColor:'yellow',
-        // borderColor:'green',
-        // tension:0.4,
+        borderColor:'yellow',
+        tension:0.4,
         // fill:true,
-        // pointStyle:'rect',
-        // pointBorderColor:'blue',
-        // pointBackgroundColor:'#fff',
-        // showLine:true
+        pointStyle:'rect',
+        pointBorderColor:'blue',
+        pointBackgroundColor:'#fff',
+        showLine:true
       },
       {
         label:"Aktual",
         data:tempact,
         backgroundColor:'red',
-        // borderColor:'green',
-        // tension:0.4,
+        borderColor:'red',
+        tension:0.4,
         // fill:true,
-        // pointStyle:'rect',
-        // pointBorderColor:'blue',
-        // pointBackgroundColor:'#fff',
-        // showLine:true
+        pointStyle:'rect',
+        pointBorderColor:'blue',
+        pointBackgroundColor:'#fff',
+        showLine:true
       }
     ]
   })
