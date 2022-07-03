@@ -130,38 +130,74 @@ const Readiness = () => {
     setReload(!reload)
   }
 
+  const rolee = localStorage.getItem("role")
   const [months] = React.useState(['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'])
-  return (
-    <>
-      <Upload {...props} accept=".csv">
-        <Button icon={<UploadOutlined />}>Click to Upload</Button>
-      </Upload>
-      <Table columns={columns} dataSource={data} pagination={{ pageSize: 10 }} loading={!data.length} />
-      <Modal title="Edit Data Kesiapan" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} confirmLoading={isSubmitting}>
-        <Form form={form} initialValues={dataEdit} labelCol={{span: 6}} wrapperCol={{span: 8}} layout="horizontal">
-          <Form.Item name="tahun" label="Tahun">
-            <InputNumber onChange={(e) => form.setFieldsValue({tahun: e})}/>
-          </Form.Item>
-          <Form.Item name="bulan" label="Bulan">
-            <Select onChange={(e) => form.setFieldsValue({bulan: e})}>
-              {
-                months.map(month => <Select.Option value={month} key={month}>{month}</Select.Option>)
-              }
-            </Select>
-          </Form.Item>
-          <Form.Item name="tai" label="TAI">
-            <InputNumber onChange={(e) => form.setFieldsValue({tai: e})}/>
-          </Form.Item>
-          <Form.Item name="maintenance" label="Maintenance">
-            <InputNumber onChange={(e) => form.setFieldsValue({maintenance: e})}/>
-          </Form.Item>
-          <Form.Item name="readiness" label="Readiness">
-            <InputNumber onChange={(e) => form.setFieldsValue({readiness: e})}/>
-          </Form.Item>
-        </Form>
-      </Modal>
-    </>
-  );
+  if (rolee==="admin") {
+    return (
+      <>
+        <Upload {...props} accept=".csv">
+          <Button icon={<UploadOutlined />}>Click to Upload</Button>
+        </Upload>
+        <Table columns={columns} dataSource={data} pagination={{ pageSize: 10 }} loading={!data.length} />
+        <Modal title="Edit Data Kesiapan" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} confirmLoading={isSubmitting}>
+          <Form form={form} initialValues={dataEdit} labelCol={{span: 6}} wrapperCol={{span: 8}} layout="horizontal">
+            <Form.Item name="tahun" label="Tahun">
+              <InputNumber onChange={(e) => form.setFieldsValue({tahun: e})}/>
+            </Form.Item>
+            <Form.Item name="bulan" label="Bulan">
+              <Select onChange={(e) => form.setFieldsValue({bulan: e})}>
+                {
+                  months.map(month => <Select.Option value={month} key={month}>{month}</Select.Option>)
+                }
+              </Select>
+            </Form.Item>
+            <Form.Item name="tai" label="TAI">
+              <InputNumber onChange={(e) => form.setFieldsValue({tai: e})}/>
+            </Form.Item>
+            <Form.Item name="maintenance" label="Maintenance">
+              <InputNumber onChange={(e) => form.setFieldsValue({maintenance: e})}/>
+            </Form.Item>
+            <Form.Item name="readiness" label="Readiness">
+              <InputNumber onChange={(e) => form.setFieldsValue({readiness: e})}/>
+            </Form.Item>
+          </Form>
+        </Modal>
+      </>
+    );
+  }
+  else{
+    return (
+      <>
+        {/* <Upload {...props} accept=".csv">
+          <Button icon={<UploadOutlined />}>Click to Upload</Button>
+        </Upload> */}
+        <Table columns={columns} dataSource={data} pagination={{ pageSize: 10 }} loading={!data.length} />
+        <Modal title="Edit Data Kesiapan" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} confirmLoading={isSubmitting}>
+          <Form form={form} initialValues={dataEdit} labelCol={{span: 6}} wrapperCol={{span: 8}} layout="horizontal">
+            <Form.Item name="tahun" label="Tahun">
+              <InputNumber onChange={(e) => form.setFieldsValue({tahun: e})}/>
+            </Form.Item>
+            <Form.Item name="bulan" label="Bulan">
+              <Select onChange={(e) => form.setFieldsValue({bulan: e})}>
+                {
+                  months.map(month => <Select.Option value={month} key={month}>{month}</Select.Option>)
+                }
+              </Select>
+            </Form.Item>
+            <Form.Item name="tai" label="TAI">
+              <InputNumber onChange={(e) => form.setFieldsValue({tai: e})}/>
+            </Form.Item>
+            <Form.Item name="maintenance" label="Maintenance">
+              <InputNumber onChange={(e) => form.setFieldsValue({maintenance: e})}/>
+            </Form.Item>
+            <Form.Item name="readiness" label="Readiness">
+              <InputNumber onChange={(e) => form.setFieldsValue({readiness: e})}/>
+            </Form.Item>
+          </Form>
+        </Modal>
+      </>
+    );
+  }
 };
 
 export default Readiness;

@@ -14,7 +14,7 @@ const ModalTable = ({isModalVisible, setIsModalVisible, data}) => {
     labels:["Jan","Feb", "March", "April", "May", "June", "July", "August", "September", "Oct", "Nov", "Dec"],
     datasets:[
       {
-        label:"Predict",
+        label:"Prediksi",
         data:tempPredict,
         backgroundColor:'yellow',
         borderColor:'yellow',
