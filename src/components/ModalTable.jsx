@@ -9,7 +9,7 @@ ChartJS.register(
 const ModalTable = ({isModalVisible, setIsModalVisible, data}) => {
   let tempPredict = data.map(item => item.predict)
   let tempact = data.map(item => item.readiness)
-  console.log(tempPredict)
+  // console.log(tempPredict)
   const [data2]= useState({
     labels:["Jan","Feb", "March", "April", "May", "June", "July", "August", "September", "Oct", "Nov", "Dec"],
     datasets:[

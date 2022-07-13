@@ -2,40 +2,19 @@ import React from "react";
 import { Table, Image, Button } from "antd";
 import ModalPredict from "../components/ModalPredict";
 import ModalTable from "../components/ModalTable";
+import ModalSelect from "../components/ModalSelect";
 import axios from "axios";
-// import { Line } from 'react-chartjs-2';
-// import {Chart as ChartJS, Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement, Filler } from 'chart.js';
-
-// ChartJS.register(
-//   Title, Tooltip, LineElement, Legend,
-//   CategoryScale, LinearScale, PointElement, Filler
-// )
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Predict = () => {
   const [isModalVisible, setIsModalVisible] = React.useState(true);
   const [data, setData] = React.useState([]);
   const [visible, setVisible] = React.useState(false);
+  const [visibleSelect, setVisibleSelect] = React.useState(false);
   const [visibleTable, setVisibleTable] = React.useState(false);
   const [image, setImage] = React.useState();
   const [options, setOptions] = React.useState([]);
-  // const [data2]= React.useState({
-  //   labels:["Jan","Feb", "March", "April", "May", "June", "July", "August", "September", "Oct", "Nov", "Dec"],
-  //   datasets:[
-  //     {
-  //       label:"First Dataset",
-  //       data:[10, 20, 30, 42, 51, 82, 31, 59, 61, 73, 91, 58],
-  //       backgroundColor:'yellow',
-  //       borderColor:'green',
-  //       tension:0.4,
-  //       fill:true,
-  //       pointStyle:'rect',
-  //       pointBorderColor:'blue',
-  //       pointBackgroundColor:'#fff',
-  //       showLine:true
-  //     }
-  //   ]
-  // })
+
   React.useEffect(() => {
     (async () => {
       try {
@@ -79,15 +58,12 @@ const Predict = () => {
       dataIndex: "readiness",
     }
   ];
-  
-
+// console.log(setVisibleTable);
   return (
     <>
       <Button onClick={() => setIsModalVisible(true)}>Pilih Tahun</Button>
-      {/* <Button onClick={() => setVisible(true)} className="ml-4">Tampilkan Grafik</Button> */}
-      <Button onClick={() => setVisibleTable(true)} className="ml-4">Prediksi</Button>
-      
-      {/* <Line data={data2}>Hello</Line> */}
+      <Button onClick={() => setVisible(true)} className="ml-4">Tampilkan Grafik</Button>
+      <Button onClick={() => setVisibleSelect(true)} className="ml-4">Predict</Button>
       <ModalPredict
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
@@ -100,7 +76,12 @@ const Predict = () => {
         setIsModalVisible={setVisibleTable}
         data={data}
       />
-      
+      <ModalSelect
+        isModalVisible={visibleSelect}
+        setIsModalVisible={setVisibleSelect}
+        datadata={data}
+        
+      />
       <Table
         columns={columns}
         dataSource={isModalVisible ? [] : data}

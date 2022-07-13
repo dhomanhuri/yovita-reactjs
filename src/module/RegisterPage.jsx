@@ -32,7 +32,8 @@ const RegisterPage = () => {
           }}
           onSubmit={async (values, actions) => {
             const { email, password, name } = values;
-            await register(name, email + "@student.polinema.ac.id", password);
+            await register(name, email, password);
+            // await register(name, email + "@student.polinema.ac.id", password);
             navigate("/login");
           }}
           validate={(values) => {}}
@@ -58,14 +59,19 @@ const RegisterPage = () => {
                 name="email"
                 required={true}
                 validate={(value) => {
-                  const email = value + "@student.polinema.ac.id"
+                  const email = value ;
                   if (email.length === 0) return "Email cannot be empty";
-                  if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) return "Invalid email"
+                  // if(!email.includes("@student.polinema.ac.id") &&!email.includes("@idu.ac.id")) return "Invalid email"
+                  // if(!email.includes("@idu.ac.id") ) return "Invalid email"
+                  // if(!email.includes("@kemham.go.id") ) return "Invalid email"
+                  // if(!email.includes("@tni-au-mil.id") ) return "Invalid email"
+                  if(!email.includes("student.polinema.ac.id")&&!email.includes("@tni-au-mil.id")&&!email.includes("@kemham.go.id")&&!email.includes("@idu.ac.id")) return "Invalid email";
+                  // if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) return "Invalid email"
                   return undefined;
                 }}
               >
                 <Input
-                  addonAfter="@student.polinema.ac.id"
+                  // addonAfter="@student.polinema.ac.id"
                   name="email"
                   prefix={<MailOutlined />}
                   placeholder="Email"

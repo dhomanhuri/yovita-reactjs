@@ -1,0 +1,109 @@
+ [
+      {
+        "bulan": "Januari",
+        "maintenance": "0",
+        "predict": "360",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      {
+        "bulan": "Februari",
+        "maintenance": "0",
+        "predict": "373",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      {
+        "bulan": "Maret",
+        "maintenance": "0",
+        "predict": "362",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "April",
+        "maintenance": "0",
+        "predict": "367",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "Mei",
+        "maintenance": "0",
+        "predict": "368",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "Juni",
+        "maintenance": "0",
+        "predict": "364",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "Juli",
+        "maintenance": "0",
+        "predict": "370",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "Agustus",
+        "maintenance": "0",
+        "predict": "355",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "September",
+        "maintenance": "0",
+        "predict": "367",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "Oktober",
+        "maintenance": "0",
+        "predict": "373",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "November",
+        "maintenance": "0",
+        "predict": "364",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      },
+      
+      {
+        "bulan": "Desember",
+        "maintenance": "0",
+        "predict": "375",
+        "readiness": "0",
+        "tahun": "2023",
+        "tai": "0"
+      }
+      
+    ]
+  
