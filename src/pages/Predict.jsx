@@ -3,6 +3,7 @@ import { Table, Image, Button } from "antd";
 import ModalPredict from "../components/ModalPredict";
 import ModalTable from "../components/ModalTable";
 import ModalSelect from "../components/ModalSelect";
+import ModalTahunIni from "../components/ModalTahunIni";
 import axios from "axios";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -80,15 +81,19 @@ const Predict = () => {
         isModalVisible={visibleSelect}
         setIsModalVisible={setVisibleSelect}
         datadata={data}
-        
       />
+        <ModalTahunIni
+          isModalVisible={visible}
+          setIsModalVisible={setVisible}
+          datadata={data}
+        />
       <Table
         columns={columns}
         dataSource={isModalVisible ? [] : data}
         pagination={{ pageSize: 10 }}
         loading={isModalVisible}
       />
-      {visible && (
+      {/* {visible && (
         <div className="flex justify-center content-center">
           <Image
             width={200}
@@ -104,7 +109,7 @@ const Predict = () => {
             }}
           />
         </div>
-      )}
+      )} */}
     </>
   );
 };

@@ -16,7 +16,7 @@ ChartJS.register(
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
 
-const ModalSelect = ({isModalVisible, setIsModalVisible,datadata}) => {
+const ModalTahunIni = ({isModalVisible, setIsModalVisible,datadata}) => {
   const [toggle, setToggle] = useState(true);
   const [toggle2, setToggle2] = useState(true);
   const [toggle3, setToggle3] = useState(true);
@@ -191,8 +191,8 @@ const ModalSelect = ({isModalVisible, setIsModalVisible,datadata}) => {
         {
           label:"Prediksi",
           data:tempPredict,
-          backgroundColor:'blue',
-          borderColor:'blue',
+          backgroundColor:'purple',
+          borderColor:'purple',
           tension:0.4,
           // fill:true,
           pointStyle:'rect',
@@ -264,7 +264,7 @@ const ModalSelect = ({isModalVisible, setIsModalVisible,datadata}) => {
   console.log(toggle,toggle3,toggle2);
   return (
     <Modal
-      title="Pilih Prediksi"
+      title="."
       visible={isModalVisible}
       onOk={() => setIsModalVisible(false)}
       onCancel={() => setIsModalVisible(false)}
@@ -273,22 +273,22 @@ const ModalSelect = ({isModalVisible, setIsModalVisible,datadata}) => {
     >
       <Card bordered={false} className="text-center" style={{ width: 1060 }} >
         <Row justify="space-around" align="top" className="h-full">
-          {/* <Col>
-            <Card onClick={() => { setToggle((t) => false); setToggle2((t) => true);setToggle3((t) => false)}}  bordered={false} className="text-center" style={{ width: 300 }} >
-              Model Terbaik
-            </Card>      
-          </Col> */}
           <Col>
-            <Card onClick={() => { setToggle((t) => false); setToggle2((t) => true);setToggle3((t) => true)}}  bordered={false} className="text-center" style={{ width: 500 }} >
+            <Card onClick={() => { setToggle((t) => true); setToggle2((t) => false);setToggle3((t) => true)}}  bordered={false} className="text-center" style={{ width: 300 }} >
+              Tahun Ini
+            </Card>      
+          </Col>
+          {/* <Col>
+            <Card onClick={() => { setToggle((t) => false); setToggle2((t) => false);setToggle3((t) => true)}}  bordered={false} className="text-center" style={{ width: 500 }} >
               Tahun Terbaik
             </Card>      
           </Col>
           <Col>
-            <Card onClick={() => { setToggle((t) => true); setToggle2((t) => false);setToggle3((t) => true)}} bordered={false} className="text-center" style={{ width: 500 }} >
+            <Card onClick={() => { setToggle((t) => true); setToggle2((t) => false);setToggle3((t) => false)}} bordered={false} className="text-center" style={{ width: 500 }} >
                 Tahun Terakhir
             </Card>
-          </Col>
-        </Row>  
+          </Col>*/}
+        </Row>   
         <div style={{ display: toggle ? "none" : "block" }}>
           <br></br>
         <ModalTableLY
@@ -299,10 +299,10 @@ const ModalSelect = ({isModalVisible, setIsModalVisible,datadata}) => {
         </div>
         <div style={{ display: toggle2 ? "none" : "block" }}>
           <br></br>
-        <ModalTableBM
+        <ModalTable
           options={options}
           // setData={setData}
-          data={array}
+          data={datadata}
         />
         </div>
         <div style={{ display: toggle3 ? "none" : "block" }}>
@@ -313,4 +313,4 @@ const ModalSelect = ({isModalVisible, setIsModalVisible,datadata}) => {
     </Modal>
   );
 };
-export default ModalSelect;
+export default ModalTahunIni;

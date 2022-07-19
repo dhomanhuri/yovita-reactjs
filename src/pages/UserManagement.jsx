@@ -86,10 +86,10 @@ const UserManagement = () => {
     title="Edit User"
     visible={visibleTable}
     setIsModalVisible={setVisibleTable}
-    
+    onCancel={setVisibleTable(false)}
     // data={data}
     // onOk={()=>{setVisibleTable(false)}}
-    onCancel={()=>{setVisibleTable(false)}}
+    // onCancel={()=>{setVisibleTable(false)}}
     >
     {/* <Input name="name" value={editingStudent?.name} onChange={(e)=>{
       // nama=e;
