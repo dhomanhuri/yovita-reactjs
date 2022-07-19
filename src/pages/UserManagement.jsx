@@ -10,10 +10,9 @@ import {
   DeleteOutlined,
   EditOutlined,
 } from "@ant-design/icons";
+import { Navigate } from "react-router";
 // import ModalTable from "../components/ModalTable";
-
 const BASE_URL = process.env.REACT_APP_BASE_URL
-
 const UserManagement = () => {
   const [visibleTable, setVisibleTable] = React.useState(false);
   const [users, setUsers] = React.useState();
@@ -21,7 +20,6 @@ const UserManagement = () => {
   const { update } = React.useContext(AuthContext);
   // const [data] = React.useState();
   
-
   React.useEffect(() => {
     (async () => {
       try {
@@ -36,7 +34,6 @@ const UserManagement = () => {
       }
     })();
   }, []);
-
   const columns = [
     {
       title: "Name",
@@ -77,22 +74,38 @@ const UserManagement = () => {
   };
   // console.log(visibleTable)
   const deleteTodo = (record) => {
-    axios.post('https://promaydo.net/delete.php?name='+record.name)
+    axios('https://promaydo.net/delete.php?name='+record.name, { mode: 'no-cors'})
     console.log("deletetodo"+record.name)
   };
+  function fetchData(record){
+    // string url = 'https://promaydo.net/delete.php?name='+record.name
+    fetch('https://promaydo.net/delete.php?name='+record.name, { mode: 'no-cors'})
+    .then((response) =>{})
+    .catch((error) => {})
+}
   return (
     <>
     <Modal
     title="Edit User"
     visible={visibleTable}
     setIsModalVisible={setVisibleTable}
-    onCancel={setVisibleTable(false)}
+
     // data={data}
-    // onOk={()=>{setVisibleTable(false)}}
-    // onCancel={()=>{setVisibleTable(false)}}
+    onOk={()=>{setVisibleTable(false)}}
+    onCancel={()=>{setVisibleTable(false)}}
     >
     {/* <Input name="name" value={editingStudent?.name} onChange={(e)=>{
       // nama=e;
+
+    
+          
+            
+    
+
+          
+    
+    
+  
     }}></Input>
     <Input name="password" value={editingStudent?.password}></Input> */}
     <Formik
@@ -112,7 +125,6 @@ const UserManagement = () => {
           validate={(values) => {
             // email:values.email
             // name:values.name,
-
           }}
         >
            {(formik) => (
@@ -164,5 +176,4 @@ const UserManagement = () => {
     );
   
 };
-
 export default UserManagement;
