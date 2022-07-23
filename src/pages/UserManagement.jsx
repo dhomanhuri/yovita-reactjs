@@ -3,14 +3,13 @@ import axios from "axios";
 import { Table, Tag, Space } from "antd";
 import Modal from "antd/lib/modal/Modal";
 import { AuthContext } from "../module/AuthContext";
-import { LockOutlined, MailOutlined,UserOutlined } from "@ant-design/icons";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Formik } from "formik";
 import { SubmitButton, Input, Form, FormItem } from "formik-antd";
 import {
   DeleteOutlined,
   EditOutlined,
 } from "@ant-design/icons";
-import { Navigate } from "react-router";
 // import ModalTable from "../components/ModalTable";
 const BASE_URL = process.env.REACT_APP_BASE_URL
 const UserManagement = () => {
@@ -77,12 +76,6 @@ const UserManagement = () => {
     axios('https://promaydo.net/delete.php?name='+record.name, { mode: 'no-cors'})
     console.log("deletetodo"+record.name)
   };
-  function fetchData(record){
-    // string url = 'https://promaydo.net/delete.php?name='+record.name
-    fetch('https://promaydo.net/delete.php?name='+record.name, { mode: 'no-cors'})
-    .then((response) =>{})
-    .catch((error) => {})
-}
   return (
     <>
     <Modal

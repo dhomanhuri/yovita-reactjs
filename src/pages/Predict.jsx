@@ -26,6 +26,7 @@ const Predict = () => {
         });
         const tahun = [...new Set(data.map((datum) => datum.tahun))];
         setOptions(tahun);
+        // console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -59,7 +60,8 @@ const Predict = () => {
       dataIndex: "readiness",
     }
   ];
-// console.log(setVisibleTable);
+  let data22 = data.map(data=>data.tahun)
+console.log(data22[0]);
   return (
     <>
       <Button onClick={() => setIsModalVisible(true)}>Pilih Tahun</Button>
@@ -86,6 +88,7 @@ const Predict = () => {
           isModalVisible={visible}
           setIsModalVisible={setVisible}
           datadata={data}
+          rev={data22[0]}
         />
       <Table
         columns={columns}
