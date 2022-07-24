@@ -94,59 +94,89 @@ const ModalTahunIni = ({isModalVisible, setIsModalVisible,datadata,rev}) => {
       },
     ];
     console.log("ini rev : "+rev);
-    if(rev==="2016"){
+    if(rev==="2017"){
       tabledata = [
         {
           "mape": "9.055",
           "rmse": "66.813",
-          "r2": "32.99"
-        }]
-    }
-    else if (rev == "2017"){
-      tabledata = [
+          "r2": "32.99 %"
+        },
         {
-          "mape": "5.122",
-          "rmse": "7.263",
-          "r2": "64.09"
-        }
-      ]
+          "mape": "Sangat Akurat",
+          "rmse": "Jauh dengan Nilai Prediksi",
+          "r2": "Rendah"
+        }]
     }
     else if (rev == "2018"){
       tabledata = [
         {
+          "mape": "5.122",
+          "rmse": "7.263",
+          "r2": "64.09 %"
+        },
+        {
+          "mape": "Sangat Akurat",
+          "rmse": "Dekat dengan Nilai Predisiksi",
+          "r2": "Kuat"
+        }
+      ]
+    }
+    else if (rev == "2019"){
+      tabledata = [
+        {
           "mape": "7.864",
           "rmse": "53.171",
-          "r2": "78.86"
+          "r2": "78.86 %"
+      },
+      {
+        "mape": "Sangat Akurat",
+        "rmse": "Jauh dengan Nilai Prediksi",
+        "r2": "Kuat"
       }
       ]
     }
-    else if (rev === "2019"){
+    else if (rev === "2020"){
       tabledata = [{
         "mape": "18.651",
         "rmse": "185.472",
-        "r2": "25.29"
+        "r2": "25.29 %"
+    },
+    {
+      "mape": "Baik",
+      "rmse": "Jauh dengan Nilai Prediksi",
+      "r2": "Rendah"
     }]
     }
-    else if (rev == "2020"){
+    else if (rev == "2021"){
       tabledata = [{
         "mape": "8.629",
         "rmse": "86.129",
-        "r2": "44.936"
+        "r2": "44.936 %"
+    },
+    {
+      "mape": "Sangat Akurat",
+      "rmse": "Jauh dengan Nilai Prediksi",
+      "r2": "Sangat Rendah"
     }]
     }
     else if (rev === "2021"){
      tabledata = [{
         "mape": "6.33",
         "rmse": "13.60",
-        "r2": "8.49"
+        "r2": "8.49 %"
+    },
+    {
+      "mape": "Sangat Akurat",
+      "rmse": "Dekat dengan Nilai Prediksi",
+      "r2": "Sangat Rendah"
     }]
     }
     else{
      tabledata = [
         {
-          "mape": "6.33",
-          "rmse": "13.60",
-          "r2": "8.49"
+          "mape": "",
+          "rmse": "",
+          "r2": ""
       }
       ]
     }
